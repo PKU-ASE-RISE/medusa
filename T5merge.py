@@ -19,6 +19,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset', type=str, default='mnli')
     parser.add_argument('--no_metric',  action="store_true")
     parser.add_argument('--peft', type=str, default=None)
+    parser.add_argument('--tiny_sample', action="store_true")
     
     parser.add_argument('--larger_batch',  type=int, default=1)
     parser.add_argument('--modularized', action="store_true")
@@ -28,7 +29,7 @@ if __name__ == '__main__':
     parser.add_argument('--lambda2',  type=float, default=1)
     args = parser.parse_args()
     
-    args.models = args.models
+    args.model = args.base_model
     
     sys.stdout = open(args.out_file, 'a+')
     
