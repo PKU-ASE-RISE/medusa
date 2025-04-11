@@ -1,0 +1,7 @@
+trainable params: 9,437,184 || all params: 2,859,194,368 || trainable%: 0.3301
+ckpts/T0_3B/lora_soft_magnitude_mutual_mask=100/qnli_cola/cola_best :
+ckpts/T0_3B/lora_soft_magnitude_mutual_mask=100/qnli_cola/qnli_best :
+****magically merged**** : 0.7488015340364333
+####################
+####################
+####################

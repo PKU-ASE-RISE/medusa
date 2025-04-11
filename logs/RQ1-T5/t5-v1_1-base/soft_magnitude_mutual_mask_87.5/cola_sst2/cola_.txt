@@ -1,0 +1,14 @@
+google/t5-v1_1-base :
+ckpts_911/google/t5-v1_1-base/soft_magnitude_mutual_mask_87.5/cola_sst2/cola_best :
+ckpts_911/google/t5-v1_1-base/soft_magnitude_mutual_mask_87.5/cola_sst2/sst2_best :
+****magically merged**** : 0.74784276126558
+####################
+####################
+####################
+google/t5-v1_1-base :
+ckpts_911/google/t5-v1_1-base/soft_magnitude_mutual_mask_87.5/cola_sst2/cola_best :
+ckpts_911/google/t5-v1_1-base/soft_magnitude_mutual_mask_87.5/cola_sst2/sst2_best :
+****magically merged**** : 0.74784276126558
+####################
+####################
+####################

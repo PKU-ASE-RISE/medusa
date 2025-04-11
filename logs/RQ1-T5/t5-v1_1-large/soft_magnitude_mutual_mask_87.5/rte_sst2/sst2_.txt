@@ -1,0 +1,14 @@
+google/t5-v1_1-large :
+ckpts_911/google/t5-v1_1-large/soft_magnitude_mutual_mask_87.5/rte_sst2/rte_best :
+ckpts_911/google/t5-v1_1-large/soft_magnitude_mutual_mask_87.5/rte_sst2/sst2_best :
+****magically merged**** : 0.9541284403669725
+####################
+####################
+####################
+google/t5-v1_1-large :
+ckpts_911/google/t5-v1_1-large/soft_magnitude_mutual_mask_87.5/rte_sst2/rte_best :
+ckpts_911/google/t5-v1_1-large/soft_magnitude_mutual_mask_87.5/rte_sst2/sst2_best :
+****magically merged**** : 0.9541284403669725
+####################
+####################
+####################

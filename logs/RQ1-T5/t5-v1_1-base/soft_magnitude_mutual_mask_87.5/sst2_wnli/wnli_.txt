@@ -1,0 +1,7 @@
+google/t5-v1_1-base :
+ckpts_911/google/t5-v1_1-base/soft_magnitude_mutual_mask_87.5/sst2_wnli/sst2_best :
+ckpts_911/google/t5-v1_1-base/soft_magnitude_mutual_mask_87.5/sst2_wnli/wnli_best :
+****magically merged**** : 0.4225352112676056
+####################
+####################
+####################
