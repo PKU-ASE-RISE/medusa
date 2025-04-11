@@ -28,8 +28,6 @@ python T5_mutual_mask.py --top_k=80 --mask=soft_magnitude_mutual_mask --out_dir=
 python T5_mutual_mask.py --top_k=80 --mask=soft_magnitude_mutual_mask --out_dir=ckpts/single/cola_with_rte/ --device=cuda:0 --datasets cola --ref_models ckpts/normal/rte_best --model=google/t5-v1_1-base --modularized 
 ```
 
-In *out_dir*, two files named 'cola.txt' and 'qnli.txt' should be found, each containing models' file paths and the merging result.
-
 Besides, we can add '--mixed' to enable mixed precision finetuning with bf16 if your device supports; '--peft ia3' or  '--peft lora' can apply PEFT finetuning instead of full finetuning. If you encounter CUDA memory problems, try '--smaller_batch=$k$' to use $k$ times smaller batch and less CUDA memory.
 
 ### Merge & Evaluation
@@ -37,16 +35,16 @@ Besides, we can add '--mixed' to enable mixed precision finetuning with bf16 if 
 The merging process and evaluation process is done simultaneously. 
 
 ```
-python T5merge.py --method= _TIES \
-	--out_file=logs/merege_cola_rte_test_cola.txt \
-	--models ckpts/mutual/cola_rte/cola_best ckpts/mutual/cola_rte/rte_best \ 
-	--dataset=cola \ 
-	--base_model=google/t5-v1_1-base \
-	--modularized \ 
-	--device=cuda:0 
+python T5merge.py --method=_TIES\
+	--out_file=logs/merege_cola_rte_test_cola.txt\
+	--models ckpts/mutual/cola_rte/cola_best ckpts/mutual/cola_rte/rte_best\
+	--dataset=cola\
+	--base_model=google/t5-v1_1-base\
+	--modularized\
+	--device=cuda:0
 ```
 
-The merging method in '--method' parameter can be chosen from:
+*out_file* contains models' file paths and the merging result. The merging method in '--method' parameter can be chosen from:
 
 ```python
 '''
