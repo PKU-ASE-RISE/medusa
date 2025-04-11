@@ -33,9 +33,11 @@ if __name__ == '__main__':
     parser.add_argument('--mixed', action="store_true")
     parser.add_argument('--modularized', action="store_true")
 
+    parser.add_argument('--tiny_sample', action="store_true")
     parser.add_argument('--peft', type=str, default=None)
     
     args = parser.parse_args()
+    args.base_model = args.model
     device = args.device
     
     train_dataloader, test_dataloader, validation_dataloader = glue_tasks(args)

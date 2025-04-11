@@ -53,6 +53,9 @@ if __name__ == '__main__':
     parser.add_argument('--larger_batch',  type=int, default=1)
     parser.add_argument('--smaller_batch',  type=int, default=1)
     parser.add_argument('--modularized', action="store_true")
+    
+    
+    parser.add_argument('--tiny_sample', action="store_true")
 
     
     parser.add_argument('--early_stopping', action="store_true")
@@ -65,6 +68,7 @@ if __name__ == '__main__':
     parser.add_argument('--peft', type=str, default=None)
     
     args = parser.parse_args()
+    args.base_model = args.model
     device = args.device
     OUT_DIR = args.out_dir
     

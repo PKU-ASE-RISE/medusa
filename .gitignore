@@ -1,2 +1,4 @@
 ckpts/
 doc/*.md
+__pycache__/
+example_logs/

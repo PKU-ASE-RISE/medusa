@@ -219,7 +219,7 @@ def glue_tasks(args, fixed_old=False):
         raise Exception(f'{args.dataset} dataset is not defined!')
     
             
-    if 'large' in args.model:
+    if 'large' in args.base_model:
         args.batch = int(args.batch / 4)
         
 
@@ -240,6 +240,10 @@ def glue_tasks(args, fixed_old=False):
                 args.batch = max_batches[args.dataset][int(args.mixed)][int('large' in args.model)]
                 args.epoch = max_epochs[args.dataset][0][int('large' in args.model)]
                 args.lr = 3e-4
+        if args.tiny_sample:
+            args.batch = max_batches[args.dataset][int(args.mixed)][int('large' in args.model)]
+            args.epoch = int (max_epochs[args.dataset][0][int('large' in args.model)] / 8)
+            args.lr = 6e-4
     except Exception as e:
         print(e)
         raise e
