@@ -13,6 +13,7 @@ def merge_W (w_list, method, args):
         # TIES_TIES: TIES-MERGING
         # DARE_SUM : DARE + LINEAR AVERAGE
         # DARE_TIES: DARE + TIES-MERGING
+        # _MEDUSA: MEDUSA merging (after masked finetuning)
         
     w0 = torch.zeros_like(w_list[0]).to(w_list[0].device)
     m1,m2 = method.split('_')[0],method.split('_')[1]
@@ -46,6 +47,13 @@ def merge_W (w_list, method, args):
             w0 += (w-w_list[0]) * 0.4
         return w0 + w_list[0]
     elif m2 == 'TIES':
+        w_l2 = w_list[1:]
+        for j in range(len(w_l2)):
+            w_l2[j] -= w_list[0]
+        s = sum(w_l2)
+        return (w_list[0] + (s > 0) * sum([w * (w>0) for w in w_l2]) / (sum([(w>0) for w in w_l2])+eps) \
+                + (s < 0) * sum([w * (w<0) for w in w_l2]) / (sum([(w<0) for w in w_l2])+eps)  ) 
+    elif m2 == 'MEDUSA':
         w_l2 = w_list[1:]
         for j in range(len(w_l2)):
             w_l2[j] -= w_list[0]

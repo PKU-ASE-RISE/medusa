@@ -35,7 +35,7 @@ Besides, we can add '--mixed' to enable mixed precision finetuning with bf16 if 
 The merging process and evaluation process is done simultaneously. 
 
 ```
-python T5merge.py --method=_TIES\
+python T5merge.py --method=_MEDUSA\
 	--out_file=logs/merege_cola_rte_test_cola.txt\
 	--models ckpts/mutual/cola_rte/cola_best ckpts/mutual/cola_rte/rte_best\
 	--dataset=cola\
@@ -54,7 +54,8 @@ python T5merge.py --method=_TIES\
     DARE_SUM       DARE with k=10% and simple averaging
     DARE_TA        DARE with k=10% and task arithmetic
     DARE_TIES      DARE with k=10% and TIES
-    _TIES          TIES without keeping top-k%, used as merge after finetuning for MEDUSA
+    _MEDUSA        MEDUSA merging (after masked finetuning), 
+                   which is similar to TIES without keeping top-k%
 '''
 ```
 
